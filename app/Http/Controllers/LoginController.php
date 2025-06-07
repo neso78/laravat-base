@@ -13,10 +13,10 @@ class LoginController extends Controller
     {
 
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required', 'string'],
             'password' => ['required'],
         ]);
-//dd(Auth::attempt($credentials));
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
@@ -25,6 +25,6 @@ class LoginController extends Controller
 
         return back()->withErrors([
             'message' => 'Uneseni podaci o akreditaciji ne odgovaraju našim podacima.',
-        ])->onlyInput('email');
+        ])->onlyInput('username');
     }
 }

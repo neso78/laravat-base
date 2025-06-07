@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center" href="/">
             <i class="bi bi-building me-2"></i>
             <span>Shon&Son</span>
         </a>
@@ -77,10 +77,11 @@
     @endif
 
     {{-- Glavni sadržaj --}}
-    {{ $slot ?? '' }}
+    {!! $slot ?? '<h1>Aplikacija u izradi</h1>' !!}
 
     {{-- Ili ako koristiš @section --}}
     @yield('content')
+
 </div>
 
 <footer>

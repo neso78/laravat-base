@@ -20,7 +20,7 @@ Route::get('dashboard', function (){
     return view('components.dashboard');
 })->middleware('auth')->name('dashboard');
 
-Route::post('logout',function (){
+Route::any('logout',function (){
     Auth::guard('web')->logout(); // Izloguje korisnika
     Session::invalidate(); // Poništava sesiju
     Session::regenerateToken();// Regeneriše CSRF token
