@@ -4,7 +4,7 @@
             <div class="card shadow-sm">
                 <div class="card-header bg-white border-0 pt-4">
                     <h4 class="card-title text-center text-primary">
-                        <i class="bi bi-person-plus me-2"></i>Kreiranje novog korisničkog računa
+                        <i class="bi bi-person-plus me-2"></i>Novi nalog
                     </h4>
                 </div>
 
@@ -77,6 +77,20 @@
                                        required>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="invite_code" class="form-label">Pozivni kod</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-key"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       id="invite_code"
+                                       name="invite_code"
+                                       placeholder="Unesite pozivni kod"
+                                       required>
+                            </div>
+                        </div>
 
                         <div class="mb-4">
                             <div class="form-check">
@@ -104,4 +118,9 @@
             </div>
         </div>
     </div>
+    <x-slot name="scripts">
+        <script>
+            console.log('Pozdrav iz register strane!');
+        </script>
+    </x-slot>
 </x-layout>

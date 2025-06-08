@@ -1,5 +1,6 @@
 :root {
     --primary-color: #2c3e50;
+    --primary-color-light: #506172;
     --secondary-color: #34495e;
     --accent-color: #3498db;
 }
@@ -90,4 +91,14 @@ footer {
 .btn-primary {
     padding: 0.5rem 1rem;
     font-weight: 500;
+    background-color: var(--primary-color);
+}
+.btn-primary:hover {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    background-color: var(--primary-color-light);
+}
+
+.text-primary{
+    color: var(--primary-color) !important;
 }

@@ -1,9 +1,13 @@
 <x-layout>
-    <h1>Wellcome to private dasboard {{\Illuminate\Support\Facades\Auth::user()->username}}</h1>
-    <form action="{{route('logout')}}" method="post">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
+    <h1>Dobrodosao {{\Illuminate\Support\Facades\Auth::user()->username}}</h1>
+
+
+    <x-slot name="scripts">
+        <script>
+            console.log('Pozdrav iz welcome strane!');
+        </script>
+    </x-slot>
+
 </x-layout>
 
 

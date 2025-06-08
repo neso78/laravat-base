@@ -13,11 +13,13 @@ class LoginController extends Controller
     {
 
         $credentials = $request->validate([
-            'username' => ['required', 'string'],
+            'name-email' => ['required', 'string'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        $field = filter_var($request->input('name-email'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        if (Auth::attempt([$field => $request->input('name-email'), 'password' => $request->input('password')], $request->input('remember'))) {
             $request->session()->regenerate();
 
             return redirect()->intended('dashboard');
@@ -25,6 +27,6 @@ class LoginController extends Controller
 
         return back()->withErrors([
             'message' => 'Uneseni podaci o akreditaciji ne odgovaraju našim podacima.',
-        ])->onlyInput('username');
+        ])->onlyInput('name-email');
     }
 }
