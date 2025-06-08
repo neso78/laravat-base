@@ -8,12 +8,11 @@ use Illuminate\View\Component;
 
 class Dashboard extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public string $ime;
+
+    public function __construct(string $ime)
     {
-        //
+        $this->ime = $ime;
     }
 
     /**
